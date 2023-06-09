@@ -13,9 +13,9 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('SIS257')
-    .setDescription('API de la materia Desarrollo Aplicación INT/Internet II')
+    .setDescription('2do Parcial USFX Yovan R. Yaune Enovore')
     .setVersion('1.0')
-    .addTag('interpretes')
+    .addTag('Registro de Series')
     .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT', in: 'header' })
     .build();
   const document = SwaggerModule.createDocument(app, config);

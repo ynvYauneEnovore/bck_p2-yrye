@@ -19,8 +19,8 @@ export class SerieService {
       titulo: createSerieDto.titulo.trim(),
       sinopsis: createSerieDto.sinopsis.trim(),
       director: createSerieDto.director.trim(),
-      duracion: createSerieDto.duracion.trim(),
-      fecha_estreno: createSerieDto.fecha_estreno.trim(),
+      duracion: createSerieDto.duracion,
+      fecha_estreno: createSerieDto.fecha_estreno,
 
     });
 
@@ -32,8 +32,8 @@ export class SerieService {
       titulo: createSerieDto.titulo.trim(),
       sinopsis: createSerieDto.sinopsis.trim(),
       director: createSerieDto.director.trim(),
-      duracion: createSerieDto.duracion.trim(),
-      fecha_estreno: createSerieDto.fecha_estreno.trim(),
+      duracion: createSerieDto.duracion,
+      fecha_estreno: createSerieDto.fecha_estreno,
     });
   }
 
