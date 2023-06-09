@@ -6,20 +6,23 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.setGlobalPrefix('api');
-  app.enableVersioning({ type: VersioningType.URI, defaultVersion: '1' });
+  app.enableVersioning({ type: VersioningType.URI, defaultVersion: '' });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.enableCors();
 
   const config = new DocumentBuilder()
-    .setTitle('SIS257')
-    .setDescription('2do Parcial USFX Yovan R. Yaune Enovore')
-    .setVersion('1.0')
-    .addTag('Registro de Series')
-    .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT', in: 'header' })
+    .setTitle('2do PARCIAL SIS257')
+    .setDescription(' Yovan Ramón Yaune Enovore')
+    .setVersion('2.2')
+    .addBearerAuth({
+      type: 'http',
+      scheme: 'bearer',
+      bearerFormat: 'JWT',
+      in: 'header',
+    })
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('apidoc', app, document);
+  SwaggerModule.setup('series', app, document);
 
   await app.listen(process.env.PORT);
   console.log(`Api corriendo en ${await app.getUrl()}`);
